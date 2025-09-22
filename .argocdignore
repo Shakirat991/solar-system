@@ -1,0 +1,15 @@
+# ignore everything by default
+*
+# but allow our manifests
+!kubernetes/
+# inside kubernetes allow everything
+kubernetes/**
+# re-ignore non-manifest file types just in case
+*.md
+*.html
+*.js
+*.gif
+*.png
+Dockerfile
+package.json
+package-lock.json
