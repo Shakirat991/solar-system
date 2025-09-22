@@ -4,16 +4,3 @@
 # but allow the kubernetes/ directory and all its contents
 !/kubernetes/
 !/kubernetes/**
-
-# (optional) unignore a root-level kustomization if you add one later
-!kustomization.yaml
-
-# (optional) still ignore common non-manifest stuff just in case
-*.md
-*.html
-*.js
-*.png
-*.gif
-Dockerfile
-package.json
-package-lock.json
