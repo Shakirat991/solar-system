@@ -1,6 +1,0 @@
-# ignore everything at the repo root
-/*
-
-# but allow the kubernetes/ directory and all its contents
-!/kubernetes/
-!/kubernetes/**
