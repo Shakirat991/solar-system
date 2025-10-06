@@ -1,9 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: solar-system
   labels:
     app: solar-system
-  name: solar-system
+  # namespace: your-namespace   # ← uncomment/set if not using "default"
 spec:
   selector:
     matchLabels:
@@ -14,14 +15,13 @@ spec:
       labels:
         app: solar-system
     spec:
+      imagePullSecrets:
+        - name: regcred                # ← the secret you’ll create below
       containers:
-      - image: shakirah/solar-system:dev
-        imagePullPolicy: Always
-        name: solar-system
-        ports:
-        - containerPort: 3000
-          name: http
-          protocol: TCP
-        envFrom:
-        - secretRef:
-            name: mongo-db-creds
+        - name: solar-system
+          image: shakirah/solar-system:dev
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 3000
+              protocol: TCP
