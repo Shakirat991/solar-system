@@ -19,7 +19,7 @@ spec:
         - name: regcred                # ← the secret you’ll create below
       containers:
         - name: solar-system
-          image: docker.io/shakirah/solar-system:dev
+          image: docker.io/siddharth67/solar-system:v9
           imagePullPolicy: Always
           ports:
             - name: http
